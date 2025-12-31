@@ -64,7 +64,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
       }
     })
 
-  const chartData = incomeData.map((item) => ({
+  const chartData = incomeData.map((item: typeof incomeData[0]) => ({
     ...item,
     grossMargin: item.revenue > 0 ? (item.grossProfit / item.revenue) * 100 : 0,
     operatingMargin: item.revenue > 0 ? (item.operatingIncome / item.revenue) * 100 : 0,
@@ -240,7 +240,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
                 <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Metric
                 </th>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <th
                     key={index}
                     className="text-right py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300"
@@ -255,7 +255,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
                 <td className="py-3 px-4 font-semibold text-slate-900 dark:text-slate-100">
                   Revenue
                 </td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-700 dark:text-slate-300">
                     {formatLargeNumber(item.revenue)}
                   </td>
@@ -263,7 +263,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300">Cost of Revenue</td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.costOfRevenue)}
                   </td>
@@ -273,7 +273,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
                 <td className="py-3 px-4 font-semibold text-green-600 dark:text-green-400">
                   Gross Profit
                 </td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-green-600 dark:text-green-400">
                     {formatLargeNumber(item.grossProfit)}
                   </td>
@@ -281,7 +281,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300">Operating Expenses</td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.operatingExpenses)}
                   </td>
@@ -291,7 +291,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
                 <td className="py-3 px-4 font-semibold text-purple-600 dark:text-purple-400">
                   Operating Income
                 </td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-purple-600 dark:text-purple-400">
                     {formatLargeNumber(item.operatingIncome)}
                   </td>
@@ -299,7 +299,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300">EBITDA</td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.ebitda)}
                   </td>
@@ -309,7 +309,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
                 <td className="py-3 px-4 font-bold text-indigo-600 dark:text-indigo-400">
                   Net Income
                 </td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-bold text-indigo-600 dark:text-indigo-400">
                     {formatLargeNumber(item.netIncome)}
                   </td>
@@ -317,7 +317,7 @@ export default function IncomeStatementViewer({ symbol }: IncomeStatementViewerP
               </tr>
               <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300">Earnings Per Share</td>
-                {incomeData.map((item, index) => (
+                {incomeData.map((item: typeof incomeData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     ${item.earningsPerShare.toFixed(2)}
                   </td>

@@ -185,7 +185,7 @@ function DefaultErrorFallback({ error, onReset }: DefaultErrorFallbackProps) {
             </Button>
 
             <Button
-              variant="outline"
+              variant="secondary"
               size="lg"
               onClick={handleGoHome}
               className="flex items-center justify-center gap-2"
@@ -195,7 +195,7 @@ function DefaultErrorFallback({ error, onReset }: DefaultErrorFallbackProps) {
             </Button>
 
             <Button
-              variant="outline"
+              variant="secondary"
               size="lg"
               onClick={handleReload}
             >

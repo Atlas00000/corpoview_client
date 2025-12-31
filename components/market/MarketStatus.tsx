@@ -116,7 +116,7 @@ function getMarketStatus(): MarketStatusData {
     marketOpenTime,
     marketCloseTime,
     nextMarketOpen,
-    timeUntilOpen: timeUntilOpen > 0 ? timeUntilOpen : undefined,
+    timeUntilOpen: (timeUntilOpen ?? 0) > 0 ? timeUntilOpen : undefined,
     timeUntilClose: timeUntilClose && timeUntilClose > 0 ? timeUntilClose : undefined,
   }
 }

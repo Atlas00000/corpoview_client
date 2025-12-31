@@ -61,7 +61,7 @@ export default function CryptoComparison({ cryptoIds }: CryptoComparisonProps) {
     const minLength = Math.min(...cryptoHistories.map((h) => h.history?.length || 0))
     if (minLength === 0) return []
 
-    const normalizedData: Record<string, number>[] = []
+    const normalizedData: Record<string, number | string>[] = []
 
     cryptoHistories.forEach((history, index) => {
       if (history.history && history.history.length > 0) {

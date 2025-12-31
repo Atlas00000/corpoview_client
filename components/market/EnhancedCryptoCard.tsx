@@ -71,7 +71,7 @@ function EnhancedCryptoCard({ cryptoId, index }: EnhancedCryptoCardProps) {
   const crypto = useMemo(() => markets && markets.length > 0 ? markets[0] : null, [markets])
 
   // Memoize computed values
-  const isPositive = useMemo(() => crypto?.priceChangePercentage24h >= 0 ?? false, [crypto?.priceChangePercentage24h])
+  const isPositive = useMemo(() => (crypto?.priceChangePercentage24h ?? 0) >= 0, [crypto?.priceChangePercentage24h])
   const changeColor = useMemo(
     () => isPositive ? 'text-success-600 dark:text-success-400' : 'text-danger-600 dark:text-danger-400',
     [isPositive]

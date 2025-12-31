@@ -87,7 +87,7 @@ export default function StockNewsSection({ symbol, limit = 9 }: StockNewsSection
         )}
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {regularNews.map((article, index) => (
+          {regularNews.map((article: typeof regularNews[0], index: number) => (
             <StaggerItem key={`${article.url}-${index}`}>
               <NewsArticleCard
                 article={{

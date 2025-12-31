@@ -39,10 +39,10 @@ export default function StockComparison({ symbols }: StockComparisonProps) {
     const minLength = Math.min(...stockData.map((d) => d.data?.length || 0))
     if (minLength === 0) return []
 
-    const normalizedData: Record<string, number>[] = []
+    const normalizedData: Record<string, number | string>[] = []
 
     for (let i = 0; i < minLength; i++) {
-      const dataPoint: Record<string, number> = {
+      const dataPoint: Record<string, number | string> = {
         date: formatDate(stockData[0].data![i].date),
       }
 

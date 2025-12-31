@@ -230,7 +230,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
                 <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Metric
                 </th>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <th
                     key={index}
                     className="text-right py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300"
@@ -250,7 +250,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
                 <td className="py-3 px-4 font-semibold text-green-600 dark:text-green-400">
                   Operating Cash Flow
                 </td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-green-600 dark:text-green-400">
                     {formatLargeNumber(item.operatingCashFlow)}
                   </td>
@@ -263,7 +263,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300">Capital Expenditure</td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.capitalExpenditure)}
                   </td>
@@ -273,7 +273,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
                 <td className="py-3 px-4 font-semibold text-amber-600 dark:text-amber-400">
                   Investing Cash Flow
                 </td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-amber-600 dark:text-amber-400">
                     {formatLargeNumber(item.investingCashFlow)}
                   </td>
@@ -286,7 +286,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300">Dividends Paid</td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.dividendsPaid)}
                   </td>
@@ -296,7 +296,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
                 <td className="py-3 px-4 font-semibold text-indigo-600 dark:text-indigo-400">
                   Financing Cash Flow
                 </td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-indigo-600 dark:text-indigo-400">
                     {formatLargeNumber(item.financingCashFlow)}
                   </td>
@@ -309,7 +309,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 font-semibold text-slate-700 dark:text-slate-300">Free Cash Flow</td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-emerald-600 dark:text-emerald-400">
                     {formatLargeNumber(item.freeCashFlow)}
                   </td>
@@ -319,7 +319,7 @@ export default function CashFlowViewer({ symbol }: CashFlowViewerProps) {
                 <td className="py-3 px-4 font-bold text-slate-900 dark:text-slate-100">
                   Net Change in Cash
                 </td>
-                {cashFlowData.map((item, index) => (
+                {cashFlowData.map((item: typeof cashFlowData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-bold text-slate-900 dark:text-slate-100">
                     {formatLargeNumber(item.netCashFlow)}
                   </td>

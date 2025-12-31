@@ -5,7 +5,7 @@ import { useStockDaily, useStockQuote } from '@/lib/hooks/useStockData'
 import { SlideUp, Skeleton } from '@/components/effects'
 import { Card } from '@/components/ui'
 import { motion } from 'framer-motion'
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, BarChart, Bar } from 'recharts'
+import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, BarChart, Bar, Cell } from 'recharts'
 import { IconTrendingUp, IconAlertCircle } from '@/components/icons'
 
 export interface VolatilityIndicatorsProps {
@@ -55,7 +55,7 @@ function calculateVolatility(prices: number[]): {
   const variance = returns.reduce((sum, r) => sum + Math.pow(r - avgReturn, 2), 0) / returns.length
   const volatility = Math.sqrt(variance) * 100
 
-  const rollingVolatilities = []
+  const rollingVolatilities: number[] = []
   const window = 10
   for (let i = window; i < returns.length; i++) {
     const windowReturns = returns.slice(i - window, i)
@@ -105,7 +105,7 @@ export default function VolatilityIndicators({ symbol }: VolatilityIndicatorsPro
       }
     }
 
-    const rollingVolatilities = []
+    const rollingVolatilities: number[] = []
     const window = 10
     for (let i = window; i < returns.length; i++) {
       const windowReturns = returns.slice(i - window, i)

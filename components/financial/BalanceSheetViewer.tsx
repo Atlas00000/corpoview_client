@@ -114,7 +114,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
     },
   ]
 
-  const ratiosData = balanceData.map((item) => ({
+  const ratiosData = balanceData.map((item: typeof balanceData[0]) => ({
     ...item,
     debtToEquity: calculateDebtToEquity(item.longTermDebt, item.totalEquity),
     currentRatio: calculateCurrentRatio(item.totalCurrentAssets, item.totalCurrentLiabilities),
@@ -288,7 +288,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
                 <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Metric
                 </th>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <th
                     key={index}
                     className="text-right py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300"
@@ -308,7 +308,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
                 <td className="py-3 px-4 font-semibold text-slate-900 dark:text-slate-100">
                   Total Assets
                 </td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-blue-600 dark:text-blue-400">
                     {formatLargeNumber(item.totalAssets)}
                   </td>
@@ -316,7 +316,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300 pl-8">Current Assets</td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.totalCurrentAssets)}
                   </td>
@@ -324,7 +324,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300 pl-12">Cash & Equivalents</td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.cashAndCashEquivalents)}
                   </td>
@@ -332,7 +332,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300 pl-12">Inventory</td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.inventory)}
                   </td>
@@ -347,7 +347,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
                 <td className="py-3 px-4 font-semibold text-slate-900 dark:text-slate-100">
                   Total Liabilities
                 </td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-rose-600 dark:text-rose-400">
                     {formatLargeNumber(item.totalLiabilities)}
                   </td>
@@ -355,7 +355,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300 pl-8">Current Liabilities</td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.totalCurrentLiabilities)}
                   </td>
@@ -363,7 +363,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
               </tr>
               <tr className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300 pl-8">Long Term Debt</td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.longTermDebt)}
                   </td>
@@ -378,7 +378,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
                 <td className="py-3 px-4 font-semibold text-slate-900 dark:text-slate-100">
                   Total Equity
                 </td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right font-semibold text-green-600 dark:text-green-400">
                     {formatLargeNumber(item.totalEquity)}
                   </td>
@@ -386,7 +386,7 @@ export default function BalanceSheetViewer({ symbol }: BalanceSheetViewerProps) 
               </tr>
               <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="py-3 px-4 text-slate-700 dark:text-slate-300 pl-8">Retained Earnings</td>
-                {balanceData.map((item, index) => (
+                {balanceData.map((item: typeof balanceData[0], index: number) => (
                   <td key={index} className="py-3 px-4 text-right text-slate-600 dark:text-slate-400">
                     {formatLargeNumber(item.retainedEarnings)}
                   </td>

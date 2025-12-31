@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import { useLatestRates, useHistoricalRates } from '@/lib/hooks/useFXData'
+import { useLatestRates } from '@/lib/hooks/useFXData'
 import { SlideUp, Skeleton } from '@/components/effects'
 import { Card } from '@/components/ui'
 import { motion } from 'framer-motion'

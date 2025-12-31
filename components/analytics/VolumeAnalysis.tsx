@@ -201,7 +201,7 @@ export default function VolumeAnalysis({ symbol }: VolumeAnalysisProps) {
               Volume Trend (30 Days)
             </h4>
             <ResponsiveContainer width="100%" height={300}>
-              <AreaChart data={chartData} isAnimationActive={false}>
+              <AreaChart data={chartData}>
                 <defs>
                   <linearGradient id="volumeGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8} />
@@ -248,7 +248,7 @@ export default function VolumeAnalysis({ symbol }: VolumeAnalysisProps) {
               Volume Distribution
             </h4>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={volumeDistribution} isAnimationActive={false}>
+              <BarChart data={volumeDistribution}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                 <XAxis
                   dataKey="label"

@@ -57,7 +57,7 @@ export default function CorporateIntelligencePage({
             )}
 
             <FadeIn delay={0.3}>
-              <Grid cols={1} lg={2} gap="lg">
+              <Grid cols={1} gap="lg" className="lg:grid-cols-2">
                 <EarningsCalendarWidget limit={8} />
                 <SectorComparisonChart
                   symbols={sectorSymbols}

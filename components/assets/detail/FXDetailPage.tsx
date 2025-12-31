@@ -23,7 +23,7 @@ export default function FXDetailPage({ from, to }: FXDetailPageProps) {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <Grid cols={1} lg={2} gap="lg">
+              <Grid cols={1} gap="lg" className="lg:grid-cols-2">
                 <FXCurrencyConverter from={from} to={to} />
                 <FXDetailHistory from={from} to={to} />
               </Grid>

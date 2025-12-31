@@ -55,7 +55,7 @@ function EnhancedStockCard({ symbol, name, index }: EnhancedStockCardProps) {
   const isLoading = quoteLoading || dailyLoading
 
   // Memoize computed values
-  const isPositive = useMemo(() => quote?.changePercent >= 0 ?? false, [quote?.changePercent])
+  const isPositive = useMemo(() => (quote?.changePercent ?? 0) >= 0, [quote?.changePercent])
   const changeColor = useMemo(
     () => isPositive ? 'text-success-600 dark:text-success-400' : 'text-danger-600 dark:text-danger-400',
     [isPositive]

@@ -75,7 +75,7 @@ export default function FinancialNewsPage({ symbol }: FinancialNewsPageProps) {
                 <FadeIn delay={0.2}>
                   <div className="space-y-8">
                     <BreakingNewsFeed limit={12} />
-                    <Grid cols={1} lg={2} gap="lg">
+                    <Grid cols={1} gap="lg" className="lg:grid-cols-2">
                       <TrendingTopicsWidget limit={30} />
                       <MarketAnalysisSection limit={50} />
                     </Grid>
