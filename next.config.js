@@ -36,9 +36,10 @@ const nextConfig = {
     removeConsole: false, // Logger utility manages console output
   },
   // Code splitting optimizations
-  experimental: {
-    optimizeCss: true,
-  },
+  // Note: optimizeCss requires 'critters' package - disabled for now
+  // experimental: {
+  //   optimizeCss: true,
+  // },
   // Optimize bundle size
   webpack: (config, { isServer }) => {
     if (!isServer) {
